@@ -21,6 +21,7 @@ func check(err error) {
 func init() {
 	background, _, err = ebitenutil.NewImageFromFile("assets/table.jpeg", ebiten.FilterDefault)
 	check(err)
+	//
 }
 
 func update(screen *ebiten.Image) error {
