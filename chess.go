@@ -12,6 +12,17 @@ var (
 	background *ebiten.Image
 )
 
+func check(err error) {
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
+func init() {
+	background, _, err = ebitenutil.NewImageFromFile("assets/table.jpeg", ebiten.FilterDefault)
+	check(err)
+}
+
 func update(screen *ebiten.Image) error {
 	if ebiten.IsDrawingSkipped() {
 		return nil
