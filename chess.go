@@ -27,7 +27,10 @@ func update(screen *ebiten.Image) error {
 	if ebiten.IsDrawingSkipped() {
 		return nil
 	}
-	ebitenutil.DebugPrint(screen, "Hello, World!")
+	op := &ebiten.DrawImageOptions{}
+	op.GeoM.Translate(0, 0)
+	screen.DrawImage(background, op)
+
 	return nil
 }
 
